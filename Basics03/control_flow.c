@@ -49,12 +49,12 @@ if (Object.keys(emptyObj).length === 0) {
     console.log("Object is empty")
 }
 
-//NULLISH COALESCING OPERATOR (??) : null and undefined
+//NULLISH COALESCING OPERATOR (??) : to avoid null and undefined values
 let val1, val2, val3, val4
 val1 = 5 ?? 10              //always takes first value
 val2 = null ?? 10           //value to take to replace null value
 val3 = undefined ?? 15      //value to take to replace undefined value
-val4 = null ?? 10 ?? 20     //takes only first value
+val4 = null ?? 10 ?? 20     //always takes only first value
 console.log(val1)
 console.log(val2)
 console.log(val3)
