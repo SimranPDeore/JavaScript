@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - three</title>
+</head>
+<body style = "background-color: bisque; color: darkgreen;">
+    <ul class = "language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    //1. Creating and adding values
+     //METHOD 1: TRAVERSING THE ENTIRE TREE STRUCTURE using innerHTML
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)      
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+    //METHOD 2(PREFERRED) using appendChild method
+    //optimised approach: to traverse less repeatedly using dsa in backend
+    function addOptiLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)  
+    }
+    addOptiLanguage('golang')
+
+    //2.Editing values
+    //replacing second element: python
+    const secondLanguage =  document.querySelector("li:nth-child(2)")
+    //secondLanguage.innerHTML = "Mojo" : using METHOD 1
+    //Using METHOD 2: OPTIMISED approach
+    const newli = document.createElement('li')
+    newli.textContent = "Mojo"
+    secondLanguage.replaceWith(newli)    //replaces "python" to "Mojo"
+
+    //replacing first element: JavaScript
+    const firstLanguage = document.querySelector("li:first-child")
+    //METHOD 3 : Using outerHTML
+    firstLanguage.outerHTML = '<li>TypeScript</li>'
+
+    //removing element  
+    const lastLanguage = document.querySelector('li:last-child')
+    lastLanguage.remove()   //removes last-element: golang
+
+
+</script>
+</html>
