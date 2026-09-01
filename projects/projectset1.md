@@ -1,5 +1,5 @@
 ```javascript
-##project 1 solution
+##project 1 solution : PAGE COLOR CHANGER
 
 const buttons = document.querySelectorAll('.button');
 const body = document.querySelector('body');
@@ -27,7 +27,7 @@ buttons.forEach(function (button) {
 ```
 
 ```javascript
-##project 2 solution
+##project 2 solution : BMI GENERATOR
 
 const form = document.querySelector('form');
 //declaring height outside: this usecase will give you empty value
@@ -55,5 +55,32 @@ form.addEventListener('submit', function (e) {
     }
   }
 });
+
+```
+
+```javascript
+##project 3 solution : DIGITAL CLOCK
+//METHOD 1: WE WILL USE THIS HERE
+const clock = document.getElementById('clock');
+
+//METHOD 2
+//const clock = document.querySelector('#clock');
+
+//let date = new Date();
+//console.log(date.toLocaleTimeString());
+
+//1)This gives output on console BUT does not update automatically, we need to refresh window to get the instantaneous time
+//DO THIS INSTEAD: to set continous updation intervals
+setInterval(function () {
+  let date = new Date();
+  console.log(date.toLocaleTimeString());
+}, 2000); //1000 which in ms: to update every 1s ; to update every 2s: give input 2000 which in ms
+
+//2)BUT, This gives output on console, not on the main window
+//DO THIS INSTEAD: to get output on main window
+setInterval(function () {
+  let date = new Date();
+  clock.innerHTML = date.toLocaleTimeString();
+}, 1000);
 
 ```
